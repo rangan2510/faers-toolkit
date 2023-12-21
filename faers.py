@@ -10,8 +10,8 @@ def main():
     # YOUR CODE GOES HERE
     # -------BEGIN-------
 
-    drugs = parseFile('./input/immunotherapy.csv')
-    indications = parseFile('./input/immuno-indications.csv')
+    drugs = parseFile(None)
+    indications = parseFile(None)
 
     info = DBHelper.getInfo(c, drugs, indications)
     DBHelper.generateReport(info)
