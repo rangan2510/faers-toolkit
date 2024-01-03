@@ -176,7 +176,7 @@ for zip_files in valid_files:
             i += 1
             continue
 
-        l = lines[i].decode('utf-8')
+        l = lines[i].decode('latin')
         fields = l.split('$')
         fields[len(fields)-1] = fields[len(fields)-1].replace('\n', '').replace('\r','')
 
@@ -184,7 +184,7 @@ for zip_files in valid_files:
         extra_lines = 0
         while len(fields) < req_fields and i + 1 + extra_lines < total_lines:
             extra_lines += 1
-            l += lines[i + extra_lines].decode('utf-8')
+            l += lines[i + extra_lines].decode('latin')
             fields = l.split('$')
             # Check if we went over the field count and give up
             pop_newlines(fields, req_fields)
